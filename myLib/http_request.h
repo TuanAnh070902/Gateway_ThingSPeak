@@ -8,6 +8,7 @@
 #define WEB_PORT "80"
 #define WEB_PATH "/"
 
+void http_get_task(void *pvParameters);
 void http_post_task(void *pvParameters);
 
 
