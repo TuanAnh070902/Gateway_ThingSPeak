@@ -1,4 +1,5 @@
 #include "main.h"
+#include "http_request.h"
 
 // #include "http_request.h"
 
@@ -14,4 +15,6 @@ void app_main(void)
      * examples/protocols/README.md for more information about this function.
      */
     ESP_ERROR_CHECK(example_connect());
+    xTaskCreate(&http_post_task, "http_post_task", 4096, NULL, 5, NULL);
+
 }
