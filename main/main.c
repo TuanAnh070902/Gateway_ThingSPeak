@@ -16,5 +16,5 @@ void app_main(void)
      */
     ESP_ERROR_CHECK(example_connect());
     xTaskCreate(&http_post_task, "http_post_task", 4096, NULL, 5, NULL);
-
+    xTaskCreate(&http_get_task, "http_get_task", 4096, NULL, 5, NULL);
 }
