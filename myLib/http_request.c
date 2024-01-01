@@ -78,7 +78,7 @@ void http_post_task(void *pvParameters)
 
         // //Create json GET
         // //
-        // //Create GET_Request
+        // //Create GET_Request send to Channel Thingspeak: Gateway
         // sprintf(REQUEST, "GET https://api.thingspeak.com/channels/2392342/feeds.json?results=1\n\n");
         
         if (write(s, REQUEST, strlen(REQUEST)) < 0) {
@@ -156,8 +156,10 @@ void http_get_task(void *pvParameters)
         ESP_LOGI(TAG, "... connected");
         freeaddrinfo(res);
 
-        //Create GET_Request
-        sprintf(REQUEST, "GET https://api.thingspeak.com/channels/2392342/feeds.json?results=1\n\n");
+        //Create GET_Request to receive data from Channel Thingspeak Gateway_Button
+        sprintf(REQUEST, "GET https://api.thingspeak.com/channels/2392692/feeds.json?results=1\n\n");
+
+
         
         if (write(s, REQUEST, strlen(REQUEST)) < 0) {
             ESP_LOGE(TAG, "... socket send failed");
